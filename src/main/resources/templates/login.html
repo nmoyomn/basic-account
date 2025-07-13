@@ -1,0 +1,55 @@
+<!-- src/main/resources/templates/login.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/common.css">
+  <meta charset="UTF-8">
+  <title>로그인</title>
+</head>
+<body>
+<div class="login-container">
+  <h2>로그인</h2>
+  <form id="loginForm">
+    <label for="userId">아이디 (이메일)</label><br>
+    <input type="email" id="userId" maxlength="32" required>
+    <label for="password">비밀번호</label><br>
+    <input type="password" id="password" required>
+    <button type="submit">로그인</button>
+  </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const userId = document.getElementById("userId").value.trim();
+    const password = document.getElementById("password").value;
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(userId)) {
+      alert("이메일 형식이어야 합니다");
+      return;
+    }
+
+    axios.post('/member/login', { userId, password })
+    .then(res => {
+      const token = res.data.response?.accessToken;
+      const message = "로그인 성공!\ntoken info: " + token;
+      alert(message);
+      console.log(message);
+      localStorage.setItem("jwt", token);
+      // location.href = "/dashboard"; // 필요시 리다이렉트
+    })
+    .catch(err => {
+      if (err.response) {
+        alert(err.response.data.error || "로그인에 실패했습니다.");
+      } else {
+        alert("요청 중 오류가 발생했습니다.");
+      }
+      console.error(err);
+    });
+  });
+</script>
+</body>
+</html>

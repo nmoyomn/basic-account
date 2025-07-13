@@ -1,0 +1,77 @@
+<!-- templates/signup.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/common.css">
+  <meta charset="UTF-8">
+  <title>회원가입</title>
+</head>
+<body>
+<div class="signup-container">
+  <h2>회원가입</h2>
+  <form id="signupForm">
+    <label for="userId">아이디 (이메일)</label><br>
+    <input type="email" id="userId" name="userId" maxlength="32" required ><br> <!--value="msyoon@account.com"-->
+
+    <label for="password">비밀번호</label><br>
+    <input type="password" id="password" name="password" required ><br> <!-- value="1234qwer%T" -->
+
+    <label for="passwordConfirm">비밀번호 확인</label><br>
+    <input type="password" id="passwordConfirm" name="passwordConfirm" required ><br>  <!-- value="1234qwer%T" -->
+
+    <button type="submit">가입</button>
+  </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  document.getElementById("signupForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const userId = document.getElementById("userId").value.trim();
+    const password = document.getElementById("password").value;
+    const passwordConfirm = document.getElementById("passwordConfirm").value;
+
+    // 이메일 형식 검사
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(userId)) {
+      alert("이메일 형식이어야 합니다");
+      return;
+    }
+
+    // 최대 길이 검사
+    if (userId.length > 32) {
+      alert("아이디는 최대 32자까지 입력 가능합니다");
+      return;
+    }
+
+    // 비밀번호 정규식 검사
+    const pwRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{8,}$/;
+    if (!pwRegex.test(password)) {
+      alert("비밀번호는 대문자, 소문자, 숫자, 특수문자를 포함해야 합니다");
+      return;
+    }
+
+    // 비밀번호 일치 여부
+    if (password !== passwordConfirm) {
+      alert("비밀번호가 일치하지 않습니다.");
+      return;
+    }
+
+    try {
+      const res = await axios.post('/member/signup', {
+        userId,
+        password,
+        passwordConfirm
+      });
+
+      alert("가입되셨습니다");
+      location.href = "/login";
+    } catch (err) {
+      const errorMessage = err.response?.data?.error || err.response?.data?.message || "회원가입 실패";
+      alert(errorMessage);
+    }
+  });
+</script>
+</body>
+</html>

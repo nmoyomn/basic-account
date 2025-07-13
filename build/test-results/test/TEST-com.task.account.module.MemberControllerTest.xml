@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.task.account.module.MemberControllerTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-07-13T03:46:33" hostname="DESKTOP-CFMGHHN" time="0.539">
+  <properties/>
+  <testcase name="successCreateTest()" classname="com.task.account.module.MemberControllerTest" time="0.432"/>
+  <testcase name="failDuplicateUserIdTest()" classname="com.task.account.module.MemberControllerTest" time="0.073"/>
+  <testcase name="failUserIdLengthExceededTest()" classname="com.task.account.module.MemberControllerTest" time="0.016"/>
+  <testcase name="failInvalidEmailTest()" classname="com.task.account.module.MemberControllerTest" time="0.005"/>
+  <testcase name="failInvalidPasswordTest()" classname="com.task.account.module.MemberControllerTest" time="0.005"/>
+  <testcase name="failNotEqualsPasswordTest()" classname="com.task.account.module.MemberControllerTest" time="0.004"/>
+  <system-out><![CDATA[2025-07-13 12:46:32.415  INFO 24856 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.task.account.module.MemberControllerTest], using SpringBootContextLoader
+2025-07-13 12:46:32.415  INFO 24856 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.task.account.module.MemberControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2025-07-13 12:46:32.415  INFO 24856 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.task.account.module.MemberControllerTest]: MemberControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-07-13 12:46:32.426  INFO 24856 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.task.account.AccountApplication for test class com.task.account.module.MemberControllerTest
+2025-07-13 12:46:32.428  INFO 24856 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2025-07-13 12:46:32.428  INFO 24856 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@625f5712, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5e62ca19, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@188bf4d8, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7dd7ec56, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6528d339, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2dd2ff87, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a38e3d1, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@28cf179c, org.springframework.test.context.event.EventPublishingTestExecutionListener@bdda8a7, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3149409c, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1c421b0f, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4ce18cec, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2a9f8d47, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@51297528, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5d3f8661]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2025-07-13 12:46:32.447  WARN 24856 --- [    Test worker] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/K:/gradle/caches/modules-2/files-2.1/org.json/json/20190722/7bce7bacf0ab5e9f894d307a3de8b7f540064d5/json-20190722.jar!/org/json/JSONObject.class
+	jar:file:/K:/gradle/caches/modules-2/files-2.1/com.vaadin.external.google/android-json/0.0.20131108.vaadin1/fa26d351fe62a6a17f5cda1287c1c6110dec413f/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2025-07-13 12:46:32.448  INFO 24856 --- [    Test worker] c.t.account.module.MemberControllerTest  : Starting MemberControllerTest using Java 1.8.0_382 on DESKTOP-CFMGHHN with PID 24856 (started by 문쿼리 in K:\msyoon\account)
+2025-07-13 12:46:32.448  INFO 24856 --- [    Test worker] c.t.account.module.MemberControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2025-07-13 12:46:32.450 DEBUG 24856 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@390a07a0
+2025-07-13 12:46:32.608  INFO 24856 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-13 12:46:32.621  INFO 24856 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 1 JPA repository interfaces.
+2025-07-13 12:46:32.741  INFO 24856 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-13 12:46:32.744  INFO 24856 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-07-13 12:46:32.745  INFO 24856 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-07-13 12:46:32.745  INFO 24856 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+Hibernate: 
+    
+    drop table if exists member CASCADE 
+Hibernate: 
+    
+    create table member (
+       id bigint generated by default as identity,
+        password varchar(255),
+        user_id varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+    
+    alter table member 
+       add constraint uk01_member_user_id unique (user_id)
+2025-07-13 12:46:32.766  INFO 24856 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-07-13 12:46:32.766  INFO 24856 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-13 12:46:32.904  INFO 24856 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@470f0637, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6b278b17, org.springframework.security.web.context.SecurityContextPersistenceFilter@5ea0a7a9, org.springframework.security.web.header.HeaderWriterFilter@6949cead, org.springframework.security.web.authentication.logout.LogoutFilter@780a91d0, com.task.account.config.jwt.JwtTokenFilter@2ae5580, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@278c998, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@25e353dc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4203529f, org.springframework.security.web.session.SessionManagementFilter@fe13916, org.springframework.security.web.access.ExceptionTranslationFilter@1a88d194, org.springframework.security.web.access.intercept.AuthorizationFilter@3387ab0]
+2025-07-13 12:46:32.997  WARN 24856 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-13 12:46:33.088 DEBUG 24856 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-07-13 12:46:33.092  INFO 24856 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-07-13 12:46:33.125 DEBUG 24856 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 6 mappings in 'requestMappingHandlerMapping'
+2025-07-13 12:46:33.134 DEBUG 24856 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/] in 'viewControllerHandlerMapping'
+2025-07-13 12:46:33.148 DEBUG 24856 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-07-13 12:46:33.155 DEBUG 24856 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-07-13 12:46:33.292  INFO 24856 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-07-13 12:46:33.292  INFO 24856 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-07-13 12:46:33.293  INFO 24856 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-07-13 12:46:33.299  INFO 24856 --- [    Test worker] c.t.account.module.MemberControllerTest  : Started MemberControllerTest in 0.87 seconds (JVM running for 5.769)
+2025-07-13 12:46:33.363 DEBUG 24856 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.task.account.module.member.application.MemberController#signup(MemberCreate)
+2025-07-13 12:46:33.400 DEBUG 24856 --- [    Test worker] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [MemberCreate(userId=msyoon@account.com, password=Password1!, passwordConfirm=Password1!)]
+Hibernate: 
+    select
+        member0_.id as col_0_0_ 
+    from
+        member member0_ 
+    where
+        member0_.user_id=? limit ?
+Hibernate: 
+    insert 
+    into
+        member
+        (id, password, user_id) 
+    values
+        (default, ?, ?)
+2025-07-13 12:46:33.692 DEBUG 24856 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-07-13 12:46:33.692 DEBUG 24856 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ResponseDto(code=200, message=null, error=null, response=1)]
+2025-07-13 12:46:33.739 DEBUG 24856 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.task.account.module.member.application.MemberController#signup(MemberCreate)
+2025-07-13 12:46:33.739 DEBUG 24856 --- [    Test worker] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [MemberCreate(userId=msyoon2@account.com, password=Password1!, passwordConfirm=Password1!)]
+Hibernate: 
+    select
+        member0_.id as col_0_0_ 
+    from
+        member member0_ 
+    where
+        member0_.user_id=? limit ?
+Hibernate: 
+    insert 
+    into
+        member
+        (id, password, user_id) 
+    values
+        (default, ?, ?)
+2025-07-13 12:46:33.801 DEBUG 24856 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-07-13 12:46:33.801 DEBUG 24856 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ResponseDto(code=200, message=null, error=null, response=2)]
+2025-07-13 12:46:33.803 DEBUG 24856 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.task.account.module.member.application.MemberController#signup(MemberCreate)
+2025-07-13 12:46:33.803 DEBUG 24856 --- [    Test worker] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [MemberCreate(userId=msyoon2@account.com, password=Password1!, passwordConfirm=Password1!)]
+Hibernate: 
+    select
+        member0_.id as col_0_0_ 
+    from
+        member member0_ 
+    where
+        member0_.user_id=? limit ?
+2025-07-13 12:46:33.807 DEBUG 24856 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.task.account.common.exception.GlobalExceptionHandler#handleRuntime(RuntimeException)
+2025-07-13 12:46:33.808 DEBUG 24856 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-07-13 12:46:33.808 DEBUG 24856 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ResponseDto(code=400, message=아이디가 중복되었습니다, error=아이디가 중복되었습니다, response=null)]
+2025-07-13 12:46:33.808 DEBUG 24856 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: 아이디가 중복되었습니다]
+2025-07-13 12:46:33.816 DEBUG 24856 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.task.account.module.member.application.MemberController#signup(MemberCreate)
+2025-07-13 12:46:33.817 DEBUG 24856 --- [    Test worker] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [MemberCreate(userId=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@ex.com, password=Password1!, passwordConfirm=Pa (truncated)...]
+2025-07-13 12:46:33.822 DEBUG 24856 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.task.account.common.exception.GlobalExceptionHandler#handleValidation(MethodArgumentNotValidException)
+2025-07-13 12:46:33.822 DEBUG 24856 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-07-13 12:46:33.823 DEBUG 24856 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ResponseDto(code=400, message=userId: 아이디는 최대 32자까지 입력 가능합니다, error=userId: 아이디는 최대 32자까지 입력 가능합니다,  (truncated)...]
+2025-07-13 12:46:33.823 DEBUG 24856 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.task.account.common.dto.ResponseDto<java.lang.Long>> com.task.account.module.member.application.MemberController.signup(com.task.account.module.member.application.dto.MemberCreate): [Field error in object 'memberCreate' on field 'userId': rejected value [aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@ex.com]; codes [Size.memberCreate.userId,Size.userId,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [memberCreate.userId,userId]; arguments []; default message [userId],32,0]; default message [아이디는 최대 32자까지 입력 가능합니다]] ]
+2025-07-13 12:46:33.830 DEBUG 24856 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.task.account.module.member.application.MemberController#signup(MemberCreate)
+2025-07-13 12:46:33.830 DEBUG 24856 --- [    Test worker] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [MemberCreate(userId=invalid-email, password=Password1!, passwordConfirm=Password1!)]
+2025-07-13 12:46:33.831 DEBUG 24856 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.task.account.common.exception.GlobalExceptionHandler#handleValidation(MethodArgumentNotValidException)
+2025-07-13 12:46:33.831 DEBUG 24856 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-07-13 12:46:33.831 DEBUG 24856 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ResponseDto(code=400, message=userId: 이메일 형식이어야 합니다, error=userId: 이메일 형식이어야 합니다, response=null)]
+2025-07-13 12:46:33.832 DEBUG 24856 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.task.account.common.dto.ResponseDto<java.lang.Long>> com.task.account.module.member.application.MemberController.signup(com.task.account.module.member.application.dto.MemberCreate): [Field error in object 'memberCreate' on field 'userId': rejected value [invalid-email]; codes [Email.memberCreate.userId,Email.userId,Email.java.lang.String,Email]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [memberCreate.userId,userId]; arguments []; default message [userId],[Ljavax.validation.constraints.Pattern$Flag;@f310675,.*]; default message [이메일 형식이어야 합니다]] ]
+2025-07-13 12:46:33.835 DEBUG 24856 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.task.account.module.member.application.MemberController#signup(MemberCreate)
+2025-07-13 12:46:33.836 DEBUG 24856 --- [    Test worker] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [MemberCreate(userId=msyoon@account.com, password=password, passwordConfirm=password)]
+2025-07-13 12:46:33.836 DEBUG 24856 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.task.account.common.exception.GlobalExceptionHandler#handleValidation(MethodArgumentNotValidException)
+2025-07-13 12:46:33.837 DEBUG 24856 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-07-13 12:46:33.837 DEBUG 24856 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ResponseDto(code=400, message=password: 비밀번호는 대소문자, 숫자, 특수문자를 포함해야 합니다, error=password: 비밀번호는 대소문자,  (truncated)...]
+2025-07-13 12:46:33.837 DEBUG 24856 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.task.account.common.dto.ResponseDto<java.lang.Long>> com.task.account.module.member.application.MemberController.signup(com.task.account.module.member.application.dto.MemberCreate): [Field error in object 'memberCreate' on field 'password': rejected value [password]; codes [Pattern.memberCreate.password,Pattern.password,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [memberCreate.password,password]; arguments []; default message [password],[Ljavax.validation.constraints.Pattern$Flag;@3b780b5c,^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{8,}$]; default message [비밀번호는 대소문자, 숫자, 특수문자를 포함해야 합니다]] ]
+2025-07-13 12:46:33.841 DEBUG 24856 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.task.account.module.member.application.MemberController#signup(MemberCreate)
+2025-07-13 12:46:33.841 DEBUG 24856 --- [    Test worker] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [MemberCreate(userId=msyoon@account.com, password=Password1!, passwordConfirm=Password2!)]
+2025-07-13 12:46:33.842 DEBUG 24856 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.task.account.common.exception.GlobalExceptionHandler#handleRuntime(RuntimeException)
+2025-07-13 12:46:33.842 DEBUG 24856 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-07-13 12:46:33.842 DEBUG 24856 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ResponseDto(code=400, message=비밀번호가 일치하지 않습니다, error=비밀번호가 일치하지 않습니다, response=null)]
+2025-07-13 12:46:33.842 DEBUG 24856 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: 비밀번호가 일치하지 않습니다]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
